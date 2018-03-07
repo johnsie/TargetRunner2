@@ -27,6 +27,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
@@ -39,6 +40,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -364,6 +366,13 @@ public class RunActivity extends Activity implements TickListener {
         activityTime.setText(formatter.formatElapsedTime(Formatter.Format.TXT_LONG, Math.round(at)));
         activityDistance.setText(formatter.formatDistance(Formatter.Format.TXT_SHORT, Math.round(ad)));
         activityPace.setText(formatter.formatPace(Formatter.Format.TXT_SHORT, ap));
+
+        if (ap<10)
+        {
+
+            LinearLayout layout=(LinearLayout) findViewById(R.id.TotalRow);
+            layout.setBackgroundColor(Color.parseColor("#0000FF"));
+        }
 
         double ahr = workout.getHeartRate(Scope.ACTIVITY);
         double ld = workout.getDistance(Scope.LAP);

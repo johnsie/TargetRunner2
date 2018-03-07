@@ -651,7 +651,7 @@ public class StartActivity extends Activity implements TickListener, GpsInformat
             startButton.setEnabled(true);
             startButton.setText(getString(R.string.Start_GPS));
         } else if (mGpsStatus.isFixed() == false) {
-            startButton.setEnabled(false);
+           startButton.setEnabled(false);
             startButton.setText(getString(R.string.Waiting_for_GPS));
             notificationStateManager.displayNotificationState(gpsSearchingState);
         } else {

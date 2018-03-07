@@ -57,9 +57,10 @@
         </TableRow>
 
         <LinearLayout
+            android:id="@+id/TotalRow"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/countdown_background"
+        
             android:orientation="vertical" >
 
             <LinearLayout
