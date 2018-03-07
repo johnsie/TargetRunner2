@@ -373,9 +373,31 @@ public class RunActivity extends Activity implements TickListener {
         Toast.makeText(this, String.valueOf(ap),
                 Toast.LENGTH_LONG).show();
 
-        if (ap<10)
-        {
 
+        layout.setBackgroundColor(Color.parseColor("#008000"));
+
+        if (ap>3.70)
+        {
+            //faster than 4:30mins/km (yellow)
+            LinearLayout layout=(LinearLayout) findViewById(R.id.TotalRow);
+            layout.setBackgroundColor(Color.parseColor("#FFFF00"));
+        }
+
+        if (ap>4.16)
+        {
+            //faster than 4mins/km (red)
+            LinearLayout layout=(LinearLayout) findViewById(R.id.TotalRow);
+            layout.setBackgroundColor(Color.parseColor("#FF0000"));
+        }
+
+
+
+
+
+
+        if (ap<3.01)
+        {
+            //slower than 5.30 (blue)
             LinearLayout layout=(LinearLayout) findViewById(R.id.TotalRow);
             layout.setBackgroundColor(Color.parseColor("#0000FF"));
         }
