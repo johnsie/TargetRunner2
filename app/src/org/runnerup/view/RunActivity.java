@@ -43,6 +43,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.runnerup.R;
 import org.runnerup.BuildConfig;
@@ -366,6 +367,11 @@ public class RunActivity extends Activity implements TickListener {
         activityTime.setText(formatter.formatElapsedTime(Formatter.Format.TXT_LONG, Math.round(at)));
         activityDistance.setText(formatter.formatDistance(Formatter.Format.TXT_SHORT, Math.round(ad)));
         activityPace.setText(formatter.formatPace(Formatter.Format.TXT_SHORT, ap));
+
+
+        //Use this for test debugging during run to see what these actual values are
+        Toast.makeText(this, String.valueOf(ap),
+                Toast.LENGTH_LONG).show();
 
         if (ap<10)
         {
