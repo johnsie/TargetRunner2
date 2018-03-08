@@ -76,6 +76,7 @@ public class RunActivity extends Activity implements TickListener {
     TextView activityTime = null;
     TextView activityDistance = null;
     TextView activityPace = null;
+    TextView currentPace = null;
     TextView lapTime = null;
     TextView lapDistance = null;
     TextView lapPace = null;
@@ -122,6 +123,8 @@ public class RunActivity extends Activity implements TickListener {
         activityTime = (TextView) findViewById(R.id.activity_time);
         activityDistance = (TextView) findViewById(R.id.activity_distance);
         activityPace = (TextView) findViewById(R.id.activity_pace);
+
+        currentPace = (TextView) findViewById(R.id.current_pace);
         activityHr = (TextView) findViewById(R.id.activity_hr);
         lapTime = (TextView) findViewById(R.id.lap_time);
         lapDistance = (TextView) findViewById(R.id.lap_distance);
@@ -368,22 +371,25 @@ public class RunActivity extends Activity implements TickListener {
         activityDistance.setText(formatter.formatDistance(Formatter.Format.TXT_SHORT, Math.round(ad)));
         activityPace.setText(formatter.formatPace(Formatter.Format.TXT_SHORT, ap));
 
-
+        double cp = workout.getPace(Scope.CURRENT);
         //Use this for test debugging during run to see what these actual values are
-        Toast.makeText(this, String.valueOf(ap),
+        Toast.makeText(this, String.valueOf(cp),
                 Toast.LENGTH_LONG).show();
 
-        LinearLayout layout=(LinearLayout) findViewById(R.id.TotalRow);
+        LinearLayout layout=(LinearLayout) findViewById(R.id.CurrentPace);
         layout.setBackgroundColor(Color.parseColor("#008000"));
 
-        if (ap>3.70)
+        currentPace.setText(formatter.formatPace(Formatter.Format.TXT_SHORT, cp));
+
+
+        if (cp>3.70)
         {
             //faster than 4:30mins/km (yellow)
 
             layout.setBackgroundColor(Color.parseColor("#FFFF00"));
         }
 
-        if (ap>4.16)
+        if (cp>4.16)
         {
             //faster than 4mins/km (red)
 
@@ -395,12 +401,16 @@ public class RunActivity extends Activity implements TickListener {
 
 
 
-        if (ap<3.01)
+        if (cp<3.01)
         {
             //slower than 5.30 (blue)
 
             layout.setBackgroundColor(Color.parseColor("#0000FF"));
         }
+
+
+
+
 
         double ahr = workout.getHeartRate(Scope.ACTIVITY);
         double ld = workout.getDistance(Scope.LAP);
