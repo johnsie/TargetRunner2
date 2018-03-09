@@ -7,7 +7,11 @@ RunnerUp
 
 I've forked Runkeeper so I can customise it for my runs. 
 
-I liked how Adidas Micoach had different colour zones for different speeds, so I'm modifying the user interface to show those colours and also increasing the font size so that data that is particularly important to me stands out even while running.
+I liked how Adidas Micoach had different colour zones for different speeds, so I'm modifying the user interface to show those colours. I think this will encourage me to run a bit faster.
+
+Also increasing the font size so that data that is particularly important to me stands out even while running.
+
+
 
 ## Todo
  * Add real voice notifications when for eg. when to speed up
