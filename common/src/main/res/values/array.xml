@@ -17,12 +17,12 @@
   -->
 <resources>
   <string-array name="unitEntries">
-    <item>Miles</item>
     <item>Kilometers</item>
+    <item>Miles</item>
   </string-array>
   <string-array name="unitValues">
-    <item>mi</item>
     <item>km</item>
+    <item>mi</item>
   </string-array>
   <!--Note: keep in same order as DB.INTENSITY-->
   <string-array name="step_intensity_types">

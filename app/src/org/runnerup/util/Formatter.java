@@ -218,7 +218,7 @@ public class Formatter implements OnSharedPreferenceChangeListener {
         if ("US".contentEquals(countryCode) ||
                 "GB".contentEquals(countryCode)) {
             if (editor != null)
-                editor.putString(key, "mi");
+                editor.putString(key, "km");
             return false;
         }
         else {

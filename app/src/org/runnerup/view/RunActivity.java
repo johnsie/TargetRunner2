@@ -75,8 +75,15 @@ public class RunActivity extends Activity implements TickListener {
     Button newLapButton = null;
     TextView activityTime = null;
     TextView activityDistance = null;
+
+
     TextView activityPace = null;
+
+    TextView lapPaceReadable = null;
+    TextView lapPaceTemp = null;
+
     TextView currentPace = null;
+    TextView currentPaceReadable = null;
     TextView lapTime = null;
     TextView lapDistance = null;
     TextView lapPace = null;
@@ -123,7 +130,10 @@ public class RunActivity extends Activity implements TickListener {
         activityTime = (TextView) findViewById(R.id.activity_time);
         activityDistance = (TextView) findViewById(R.id.activity_distance);
         activityPace = (TextView) findViewById(R.id.activity_pace);
+        lapPaceReadable = (TextView) findViewById(R.id.lap_pace_readable);
+        lapPaceTemp = (TextView) findViewById(R.id.lap_pace_temp);
 
+        currentPaceReadable = (TextView) findViewById(R.id.current_pace_readable);
         currentPace = (TextView) findViewById(R.id.current_pace);
         activityHr = (TextView) findViewById(R.id.activity_hr);
         lapTime = (TextView) findViewById(R.id.lap_time);
@@ -379,7 +389,10 @@ public class RunActivity extends Activity implements TickListener {
         LinearLayout layout=(LinearLayout) findViewById(R.id.CurrentPace);
         layout.setBackgroundColor(Color.parseColor("#008000"));
 
-        currentPace.setText(formatter.formatPace(Formatter.Format.TXT_SHORT, cp));
+
+
+
+        currentPaceReadable.setText(formatter.formatPace(Formatter.Format.TXT_SHORT, cp));
 
 
         if (cp>3.70)
@@ -419,6 +432,47 @@ public class RunActivity extends Activity implements TickListener {
         lapTime.setText(formatter.formatElapsedTime(Formatter.Format.TXT_LONG, Math.round(lt)));
         lapDistance.setText(formatter.formatDistance(Formatter.Format.TXT_LONG, Math.round(ld)));
         lapPace.setText(formatter.formatPace(Formatter.Format.TXT_SHORT, lp));
+
+        lapPaceReadable.setText(formatter.formatPace(Formatter.Format.TXT_LONG, lp));
+        lapPaceTemp.setText(String.valueOf(lp));
+
+        LinearLayout laplayout=(LinearLayout) findViewById(R.id.CurrentLapPace);
+        layout.setBackgroundColor(Color.parseColor("#008000"));
+
+
+        if (lp>3.70)
+        {
+            //faster than 4:30mins/km (yellow)
+
+            laplayout.setBackgroundColor(Color.parseColor("#FFFF00"));
+        }
+
+        if (lp>4.16)
+        {
+            //faster than 4mins/km (red)
+
+            laplayout.setBackgroundColor(Color.parseColor("#FF0000"));
+        }
+
+
+
+
+
+
+        if (lp<3.01)
+        {
+            //slower than 5.30 (blue)
+
+            laplayout.setBackgroundColor(Color.parseColor("#0000FF"));
+        }
+
+
+
+
+
+
+
+
         double lhr = workout.getHeartRate(Scope.LAP);
         double id = workout.getDistance(Scope.STEP);
         double it = workout.getTime(Scope.STEP);

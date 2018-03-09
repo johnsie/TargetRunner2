@@ -139,7 +139,7 @@
 
 
         <LinearLayout
-            android:id="@+id/CurrentPace"
+            android:id="@+id/CurrentLapPace"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
 
@@ -149,10 +149,55 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
 
+
+
+
+
+            <TextView
+                android:id="@+id/lap_pace_readable"
+                style="@style/RunHeader"
+                android:layout_marginRight="3dp"
+                android:textSize="20pt"
+                android:text="00000" />
+
+
+            <TextView
+                android:id="@+id/lap_pace_temp"
+                style="@style/RunHeader"
+                android:gravity="right"
+                android:layout_marginLeft="10dp"
+                android:textSize="20pt"
+        />
+        </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/CurrentPace"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/current_pace_readable"
+                style="@style/RunHeader"
+                android:layout_marginRight="3dp"
+                android:textSize="20pt"
+                android:text="00000" />
+
+
             <TextView
                 android:id="@+id/current_pace"
                 style="@style/RunHeader"
+                android:gravity="right"
                 android:layout_marginLeft="10dp"
+                android:textSize="20pt"
                 android:text="00000" />
       </LinearLayout>
 

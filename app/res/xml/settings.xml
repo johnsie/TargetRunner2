@@ -124,7 +124,7 @@
             android:enabled="true" />
 
         <CheckBoxPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="@string/pref_autopause_active"
             android:persistent="true"
             android:title="@string/Autopause"/>
