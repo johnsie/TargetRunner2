@@ -5,9 +5,15 @@ RunnerUp
 
 [![Build Status](https://travis-ci.org/jonasoreland/runnerup.svg?branch=master)](https://travis-ci.org/jonasoreland/runnerup)
 
-An open source run tracker for Android.
+I've forked Runkeeper so I can customise it for my runs. 
 
-Inspiration Garmin 410, RunKeeper and Everywhere Run.
+I liked how Adidas Micoach had different colour zones for different speeds, so I'm modifying the user interface to show those colours and also increasing the font size so that data that is particularly important to me stands out even while running.
+
+## Todo
+ * Add real voice notifications when for eg. when to speed up
+ * Streamling music player
+ * Standard music player
+ * Live updates to fb/twitter
 
 ## Features
 
