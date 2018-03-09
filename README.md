@@ -1,11 +1,11 @@
-RunnerUp
+TargetRunner2 (John's Personal RunnerUp Fork)
 ========
 
 [![Join the chat at https://gitter.im/jonasoreland/runnerup](https://badges.gitter.im/jonasoreland/runnerup.svg)](https://gitter.im/jonasoreland/runnerup?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![Build Status](https://travis-ci.org/jonasoreland/runnerup.svg?branch=master)](https://travis-ci.org/jonasoreland/runnerup)
 
-I've forked Runkeeper so I can customise it for my runs. 
+I've forked Runkeeper so I can customise it for my runs. Think I've finally got an idea how GIT works so will be able to make this continuous.
 
 I liked how Adidas Micoach had different colour zones for different speeds, so I'm modifying the user interface to show those colours. I think this will encourage me to run a bit faster.
 
